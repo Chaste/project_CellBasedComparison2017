@@ -3,4 +3,4 @@
 
 # This allows us to build tests of the project.
 # Simply set the project name in the line below.
-chaste_do_test_project(CellBasedComparison2016)
+chaste_do_test_project(CellBasedComparison2017)
