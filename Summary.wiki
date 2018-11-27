@@ -19,7 +19,7 @@ For manual installation of each dependency, on any version of Linux, see Develop
 '''NB''': the paper was developed to work with a specific tagged development version of Chaste. 
 Presently it does not work with any of the previous release versions.  However we will tie this code to the next release of Chaste.
 
----
+----
 === Instructions for Ubuntu 16.04 or similar (Chaste version 3.x) ===
 To checkout the source code for the specific code revision use the command
 {{{
@@ -36,7 +36,24 @@ You will also need the source for the CellBasedComparison2017 project.  This can
 svn checkout -r 27368 --username anonymous https://chaste.cs.ox.ac.uk/svn/chaste/projects/CellBasedComparison2017 projects/CellBasedComparison2017
 }}}
 in the Chaste directory. Note that '''username''' for checking out the project code is 'anonymous'.  When prompted for a password then please give an email address.
----
+----
+=== Instructions for Ubuntu 18.04 or similar (Chaste version 2017.x) ===
+To checkout the source code for the specific code revision use the command
+{{{
+  git clone --depth 1 --branch paper/CellBasedComparison18 https://chaste.cs.ox.ac.uk/git/chaste.git Chaste
+  cd Chaste
+}}}
+Alternatively, if you already have a clone of our Git repository then simply run the command {{{git pull; git checkout paper/CellBasedComparison18}}} to move your source to the correct revision.
+
+This project can be built with either of the two builders SCons or CMake.  (Note that SCons will be deprecated in a later release of Chaste.)
+At this point you should configure Chaste with [wiki:ChasteGuides/UserBuildGuide Scons] or [wiki:ChasteGuides/CmakeBuildGuide CMake].
+
+You will also need the (updated-since-publication) source for the CellBasedComparison2017 project.  This can be done by checking out the version from the repository by using the command 
+{{{
+svn checkout -r 27523 --username anonymous https://chaste.cs.ox.ac.uk/svn/chaste/projects/CellBasedComparison2017 projects/CellBasedComparison2017
+}}}
+in the Chaste directory. Note that '''username''' for checking out the project code is 'anonymous'.  When prompted for a password then please give an email address.
+----
 
 Now the project should be installed, and everything should compile and run correctly. 
 You can now run the tests or simulations, or create your own test suites.
