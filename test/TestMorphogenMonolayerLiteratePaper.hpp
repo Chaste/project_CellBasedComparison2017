@@ -68,7 +68,7 @@
 #include "PetscSetupAndFinalize.hpp"
 
 /*
- *  This is where you can set parameters toi be used in all the simulations.
+ *  This is where you can set parameters to be used in all the simulations.
  */
 
 static const double M_TIME_FOR_SIMULATION = 100; //100
@@ -187,13 +187,13 @@ public:
         simulator.AddUpdateRule(p_switching_update_rule);
 
         // Make the Pde and BCS
-        MorphogenCellwiseSourceParabolicPde<2> pde(cell_population, M_DUDT_COEFFICIENT,M_DIFFUSION_CONSTANT,M_UPTAKE_RATE);
-        ConstBoundaryCondition<2> bc(0.0);
-        ParabolicPdeAndBoundaryConditions<2> pde_and_bc(&pde, &bc, true);
-        pde_and_bc.SetDependentVariableName("morphogen");
+        MAKE_PTR_ARGS(MorphogenCellwiseSourceParabolicPde<2>, p_pde, (cell_population, M_DUDT_COEFFICIENT,M_DIFFUSION_CONSTANT,M_UPTAKE_RATE));
+        MAKE_PTR_ARGS(ConstBoundaryCondition<2>, p_bc, (0.0));
 
         // Create a PDE Modifier object using this pde and bcs object
-        MAKE_PTR_ARGS(ParabolicGrowingDomainPdeModifier<2>, p_pde_modifier, (&pde_and_bc));
+        MAKE_PTR_ARGS(ParabolicGrowingDomainPdeModifier<2>, p_pde_modifier, (p_pde, p_bc, true));
+        p_pde_modifier->SetDependentVariableName("morphogen");
+
         simulator.AddSimulationModifier(p_pde_modifier);
 
         simulator.Solve();
@@ -273,14 +273,12 @@ public:
         simulator.AddUpdateRule(p_adhesion_update_rule);
 
         // Make the Pde and BCS
-        MorphogenCellwiseSourceParabolicPde<2> pde(cell_population, M_DUDT_COEFFICIENT,(double)cell_width*(double)cell_width*M_DIFFUSION_CONSTANT,M_UPTAKE_RATE, 8.0);
-        //MorphogenCellwiseSourceParabolicPde<2> pde(cell_population, M_DUDT_COEFFICIENT,M_DIFFUSION_CONSTANT,M_UPTAKE_RATE);
-        ConstBoundaryCondition<2> bc(0.0);
-        ParabolicPdeAndBoundaryConditions<2> pde_and_bc(&pde, &bc, true);
-        pde_and_bc.SetDependentVariableName("morphogen");
+        MAKE_PTR_ARGS(MorphogenCellwiseSourceParabolicPde<2>, p_pde, (cell_population, M_DUDT_COEFFICIENT,(double)cell_width*(double)cell_width*M_DIFFUSION_CONSTANT,M_UPTAKE_RATE, 8.0));
+        MAKE_PTR_ARGS(ConstBoundaryCondition<2>, p_bc, (0.0));
 
         // Create a PDE Modifier object using this pde and bcs object
-        MAKE_PTR_ARGS(ParabolicGrowingDomainPdeModifier<2>, p_pde_modifier, (&pde_and_bc));
+        MAKE_PTR_ARGS(ParabolicGrowingDomainPdeModifier<2>, p_pde_modifier, (p_pde, p_bc, true));
+        p_pde_modifier->SetDependentVariableName("morphogen");
         simulator.AddSimulationModifier(p_pde_modifier);
 
         simulator.Solve();
@@ -313,8 +311,8 @@ public:
             }
         }
         p_generating_mesh->ReMesh();
-        
-		double cut_off_length = 1.5; //this is the default
+
+        double cut_off_length = 1.5; //this is the default
 
         NodesOnlyMesh<2>* p_mesh = new NodesOnlyMesh<2>;
         p_mesh->ConstructNodesWithoutMesh(*p_generating_mesh, cut_off_length);
@@ -345,14 +343,13 @@ public:
         simulator.AddForce(p_linear_force);
 
         // Make the Pde and BCS
-        MorphogenCellwiseSourceParabolicPde<2> pde(cell_population, M_DUDT_COEFFICIENT,M_DIFFUSION_CONSTANT,M_UPTAKE_RATE);
-		ConstBoundaryCondition<2> bc(0.0);
-		ParabolicPdeAndBoundaryConditions<2> pde_and_bc(&pde, &bc, true);
-		pde_and_bc.SetDependentVariableName("morphogen");
+        MAKE_PTR_ARGS(MorphogenCellwiseSourceParabolicPde<2>, p_pde, (cell_population, M_DUDT_COEFFICIENT,M_DIFFUSION_CONSTANT,M_UPTAKE_RATE));
+        MAKE_PTR_ARGS(ConstBoundaryCondition<2>, p_bc, (0.0));
 
-		// Create a PDE Modifier object using this pde and bcs object
-		MAKE_PTR_ARGS(ParabolicGrowingDomainPdeModifier<2>, p_pde_modifier, (&pde_and_bc));
-		simulator.AddSimulationModifier(p_pde_modifier);
+        // Create a PDE Modifier object using this pde and bcs object
+        MAKE_PTR_ARGS(ParabolicGrowingDomainPdeModifier<2>, p_pde_modifier, (p_pde, p_bc, true));
+        p_pde_modifier->SetDependentVariableName("morphogen");
+        simulator.AddSimulationModifier(p_pde_modifier);
 
         simulator.Solve();
 
@@ -421,14 +418,13 @@ public:
         simulator.AddForce(p_linear_force);
 
         // Make the Pde and BCS
-        MorphogenCellwiseSourceParabolicPde<2> pde(cell_population, M_DUDT_COEFFICIENT,M_DIFFUSION_CONSTANT,M_UPTAKE_RATE);
-		ConstBoundaryCondition<2> bc(0.0);
-		ParabolicPdeAndBoundaryConditions<2> pde_and_bc(&pde, &bc, true);
-		pde_and_bc.SetDependentVariableName("morphogen");
+        MAKE_PTR_ARGS(MorphogenCellwiseSourceParabolicPde<2>, p_pde, (cell_population, M_DUDT_COEFFICIENT,M_DIFFUSION_CONSTANT,M_UPTAKE_RATE));
+        MAKE_PTR_ARGS(ConstBoundaryCondition<2>, p_bc, (0.0));
 
-		// Create a PDE Modifier object using this pde and bcs object
-		MAKE_PTR_ARGS(ParabolicGrowingDomainPdeModifier<2>, p_pde_modifier, (&pde_and_bc));
-		simulator.AddSimulationModifier(p_pde_modifier);
+        // Create a PDE Modifier object using this pde and bcs object
+        MAKE_PTR_ARGS(ParabolicGrowingDomainPdeModifier<2>, p_pde_modifier, (p_pde, p_bc, true));
+        p_pde_modifier->SetDependentVariableName("morphogen");
+        simulator.AddSimulationModifier(p_pde_modifier);
 
         simulator.Solve();
     }
@@ -499,13 +495,12 @@ public:
         // Create a pde modifier and pass it to the simulation 
 
         // Make the Pde and BCS
-        MorphogenCellwiseSourceParabolicPde<2> pde(cell_population, M_DUDT_COEFFICIENT,M_DIFFUSION_CONSTANT,M_UPTAKE_RATE);
-        ConstBoundaryCondition<2> bc(0.0);
-        ParabolicPdeAndBoundaryConditions<2> pde_and_bc(&pde, &bc, true);
-        pde_and_bc.SetDependentVariableName("morphogen");
+        MAKE_PTR_ARGS(MorphogenCellwiseSourceParabolicPde<2>, p_pde, (cell_population, M_DUDT_COEFFICIENT,M_DIFFUSION_CONSTANT,M_UPTAKE_RATE));
+        MAKE_PTR_ARGS(ConstBoundaryCondition<2>, p_bc, (0.0));
 
         // Create a PDE Modifier object using this pde and bcs object
-        MAKE_PTR_ARGS(ParabolicGrowingDomainPdeModifier<2>, p_pde_modifier, (&pde_and_bc));
+        MAKE_PTR_ARGS(ParabolicGrowingDomainPdeModifier<2>, p_pde_modifier, (p_pde, p_bc, true));
+        p_pde_modifier->SetDependentVariableName("morphogen");
         simulator.AddSimulationModifier(p_pde_modifier);
 
         simulator.Solve();

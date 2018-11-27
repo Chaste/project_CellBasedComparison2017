@@ -15,8 +15,8 @@ MorphogenCellwiseSourceParabolicPde<DIM>::MorphogenCellwiseSourceParabolicPde(Ab
         double diffusionCoefficient,
         double uptakeCoefficient,
         double sourceWidth)
-		: CellwiseSourceParabolicPde<DIM>(rCellPopulation,duDtCoefficient, diffusionCoefficient, uptakeCoefficient ),
-		  mSourceWidth(sourceWidth)
+        : CellwiseSourceParabolicPde<DIM>(rCellPopulation,duDtCoefficient, diffusionCoefficient, uptakeCoefficient ),
+          mSourceWidth(sourceWidth)
 {
 }
 
@@ -58,7 +58,7 @@ double MorphogenCellwiseSourceParabolicPde<DIM>::ComputeSourceTermAtNode(const N
 
     if (x>-0.5*mSourceWidth && x<0.5*mSourceWidth)
     {
-    	coefficient = this->mUptakeCoefficient;
+    	coefficient = this->mSourceCoefficient;
     }
 
     double decay_coeficient = 0.01;
