@@ -119,7 +119,7 @@ public:
      * Simulate juxtacrine signalling in a population of cells in the
      * Cellular Automaton model.
      */
-   void TestCaBasedDeltaNotch() throw (Exception)
+   void TestCaBasedDeltaNotch()
    {
         // Create a simple 2D PottsMesh
         unsigned domain_wide = 3*M_TISSUE_RADIUS;
@@ -186,7 +186,7 @@ public:
      * Simulate juxtacrine signalling in a population of cells in the
      * Cellular Potts model.
      */
-    void TestPottsBasedDeltaNotch() throw (Exception)
+    void TestPottsBasedDeltaNotch()
     {
         // Create a simple 2D PottsMesh
         unsigned element_size = 4;
@@ -259,7 +259,7 @@ public:
      * Simulate juxtacrine signalling in a population of cells in the
      * Overlapping Spheres model.
      */
-    void TestNodeBasedDeltaNotch() throw (Exception)
+    void TestNodeBasedDeltaNotch()
     {
 
         // Create a simple mesh
@@ -326,7 +326,7 @@ public:
      * Simulate juxtacrine signalling in a population of cells in the
      * Voronoi Tesselation model.
      */
-    void TestMeshBasedDeltaNotch() throw (Exception)
+    void TestMeshBasedDeltaNotch()
     {
         // Create a simple mesh
         unsigned num_ghosts = 0;
@@ -389,7 +389,7 @@ public:
      * Simulate juxtacrine signalling in a population of cells
      * Cell Vertex model.
      */
-    void TestVertexBasedDeltaNotch() throw (Exception)
+    void TestVertexBasedDeltaNotch()
     {
         // Create a simple 2D MutableVertexMesh
         HoneycombVertexMeshGenerator generator(2*M_TISSUE_RADIUS,2.5*M_TISSUE_RADIUS);

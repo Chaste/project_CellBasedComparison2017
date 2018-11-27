@@ -101,7 +101,7 @@ public:
      * Simulate a population of cells exhibiting cell sorting using the
      * Cellular Automaton model.
      */
-    void TestCaBasedMonolayerCellSorting() throw (Exception)
+    void TestCaBasedMonolayerCellSorting()
     {
         // Create a simple 2D PottsMesh
         unsigned domain_wide = 2*M_NUM_CELLS_ACROSS;
@@ -183,7 +183,7 @@ public:
      * Simulate a population of cells exhibiting cell sorting using the
      * Cellular Potts model.
      */
-    void TestPottsMonolayerCellSorting() throw (Exception)
+    void TestPottsMonolayerCellSorting()
     {
         // Create a simple 2D PottsMesh
         unsigned element_size = 4;
@@ -263,7 +263,7 @@ public:
      * Simulate a population of cells exhibiting cell sorting using the
      * Overlapping Sphere model.
      */
-    void TestNodeBasedMonolayerCellSorting() throw (Exception)
+    void TestNodeBasedMonolayerCellSorting()
     {
         // Create a simple mesh
         HoneycombMeshGenerator generator(M_NUM_CELLS_ACROSS, M_NUM_CELLS_ACROSS, 0);
@@ -341,7 +341,7 @@ public:
      * Simulate a population of cells exhibiting cell sorting using the
      * Voronoi tesselation model.
      */
-    void TestMeshBasedWithGhostsMonolayerCellSorting() throw (Exception)
+    void TestMeshBasedWithGhostsMonolayerCellSorting()
     {
         // Create a simple mesh
         unsigned num_ghosts = 20;
@@ -413,7 +413,7 @@ public:
      * Simulate a population of cells exhibiting cell sorting using the
      * Cell Vertex model.
      */
-    void TestVertexMonolayerCellSorting() throw (Exception)
+    void TestVertexMonolayerCellSorting()
     {
         // Create a simple 2D MutableVertexMesh
         HoneycombVertexMeshGenerator generator(M_NUM_CELLS_ACROSS, M_NUM_CELLS_ACROSS);

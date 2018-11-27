@@ -127,7 +127,7 @@ public:
      * Simulate reaction diffusion on a growing a population of cells in the
      * Cellular Automaton model.
      */
-    void TestCaBasedMorphogenMonolayer() throw (Exception)
+    void TestCaBasedMorphogenMonolayer()
     {
         // Create a simple 2D PottsMesh
         unsigned domain_wide = 20*M_NUM_CELLS_ACROSS;
@@ -205,7 +205,7 @@ public:
      * Simulate reaction diffusion on a growing a population of cells in the
      * Cellular Potts model.
      */
-    void TestPottsBasedMorphogenMonolayer() throw (Exception)
+    void TestPottsBasedMorphogenMonolayer()
     {
         unsigned cell_width = 4;
         unsigned domain_width = M_NUM_CELLS_ACROSS*cell_width*20;
@@ -290,7 +290,7 @@ public:
      * Simulate reaction diffusion on a growing a population of cells in the
      * Overlapping Spheres model.
      */
-    void TestNodeBasedMorphogenMonolayer() throw (Exception)
+    void TestNodeBasedMorphogenMonolayer()
     {
         HoneycombMeshGenerator generator(2.0*M_NUM_CELLS_ACROSS, 3.0*M_NUM_CELLS_ACROSS,0);
         MutableMesh<2,2>* p_generating_mesh = generator.GetMesh();
@@ -363,7 +363,7 @@ public:
      * Voronoi Tesselation model.
      */
 
-    void TestMeshBasedMorphogenMonolayer() throw (Exception)
+    void TestMeshBasedMorphogenMonolayer()
     {
         HoneycombMeshGenerator generator(2.0*M_NUM_CELLS_ACROSS,3.0*M_NUM_CELLS_ACROSS);
         MutableMesh<2,2>* p_mesh = generator.GetMesh();
@@ -435,7 +435,7 @@ public:
      * Simulate reaction diffusion on a growing a population of cells in the
      * Cell Vertex model.
      */
-    void TestVertexBasedMorphogenMonolayer() throw (Exception)
+    void TestVertexBasedMorphogenMonolayer()
     {
         // Create Mesh
         HoneycombVertexMeshGenerator generator(2.0*M_NUM_CELLS_ACROSS, 3.0*M_NUM_CELLS_ACROSS);

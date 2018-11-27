@@ -121,7 +121,7 @@ public:
      * Simulate cell proliferation in the colorectal crypt using the
      * Cellular Automaton model.
      */
-    void TestCaBasedCrypt() throw (Exception)
+    void TestCaBasedCrypt()
     {
         // Create a simple 2D PottsMesh (periodic in x)
         PottsMeshGenerator<2> generator(M_CRYPT_DIAMETER, 0, 0, M_CRYPT_LENGTH*3, 0, 0, 1, 0, 0, false, true);
@@ -191,7 +191,7 @@ public:
      * Simulate cell proliferation in the colorectal crypt using the
      * Cellular Potts model.
      */
-    void TestPottsBasedCrypt() throw (Exception)
+    void TestPottsBasedCrypt()
     {
         unsigned cell_width = 4;
 
@@ -273,7 +273,7 @@ public:
      * Simulate cell proliferation in the colorectal crypt using the
      * Overlapping Spheres model.
      */
-    void TestNodeBasedCrypt() throw (Exception)
+    void TestNodeBasedCrypt()
     {
         // Create a simple mesh
         HoneycombMeshGenerator generator(M_CRYPT_DIAMETER, M_CRYPT_LENGTH, 0);
@@ -357,7 +357,7 @@ public:
      * Simulate cell proliferation in the colorectal crypt using the
      * Voronoi Tesselation model.
      */
-    void TestMeshBasedCrypt() throw (Exception)
+    void TestMeshBasedCrypt()
     {
         // Create mesh
         unsigned thickness_of_ghost_layer = 2;
@@ -431,7 +431,7 @@ public:
      * Simulate cell proliferation in the colorectal crypt using the
      * Cell Vertex model.
      */
-    void TestVertexBasedCrypt() throw (Exception)
+    void TestVertexBasedCrypt()
     {
         // Create mesh
         CylindricalHoneycombVertexMeshGenerator generator(M_CRYPT_DIAMETER, M_CRYPT_LENGTH, true);
