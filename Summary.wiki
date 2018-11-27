@@ -29,7 +29,7 @@ To checkout the source code for the specific code revision use the command
 Alternatively, if you already have a clone of our Git repository then simply run the command {{{git pull; git checkout paper/CellBasedComparison}}} to move your source to the correct revision.
 
 This project can be built with either of the two builders SCons or CMake.  (Note that SCons will be deprecated in a later release of Chaste.)
-At this point you should configure Chaste with [wiki:ChasteGuides/UserBuildGuide Scons] or [wiki:ChasteGuides/CmakeBuildGuide CMake].
+At this point you should configure Chaste with [wiki:ChasteGuides/CmakeBuildGuide CMake] or deprecated [wiki:SconsArchive/UserBuildGuide Scons].
 
 You will also need the source for the CellBasedComparison2017 project.  This can be done by checking out the version from the repository by using the command 
 {{{
@@ -46,11 +46,11 @@ To checkout the source code for the specific code revision use the command
 Alternatively, if you already have a clone of our Git repository then simply run the command {{{git pull; git checkout paper/CellBasedComparison18}}} to move your source to the correct revision.
 
 This project can be built with either of the two builders SCons or CMake.  (Note that SCons will be deprecated in a later release of Chaste.)
-At this point you should configure Chaste with [wiki:ChasteGuides/UserBuildGuide Scons] or [wiki:ChasteGuides/CmakeBuildGuide CMake].
+At this point you should configure Chaste with [wiki:ChasteGuides/CmakeBuildGuide CMake] or deprecated [wiki:SconsArchive/UserBuildGuide Scons].
 
 You will also need the (updated-since-publication) source for the CellBasedComparison2017 project.  This can be done by checking out the version from the repository by using the command 
 {{{
-svn checkout -r 27523 --username anonymous https://chaste.cs.ox.ac.uk/svn/chaste/projects/CellBasedComparison2017 projects/CellBasedComparison2017
+svn checkout -r 27524 --username anonymous https://chaste.cs.ox.ac.uk/svn/chaste/projects/CellBasedComparison2017 projects/CellBasedComparison2017
 }}}
 in the Chaste directory. Note that '''username''' for checking out the project code is 'anonymous'.  When prompted for a password then please give an email address.
 ----
