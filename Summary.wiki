@@ -19,6 +19,8 @@ For manual installation of each dependency, on any version of Linux, see Develop
 '''NB''': the paper was developed to work with a specific tagged development version of Chaste. 
 Presently it does not work with any of the previous release versions.  However we will tie this code to the next release of Chaste.
 
+---
+=== Instructions for Ubuntu 16.04 or similar (Chaste version 3.x) ===
 To checkout the source code for the specific code revision use the command
 {{{
   git clone --depth 1 --branch paper/CellBasedComparison https://chaste.cs.ox.ac.uk/git/chaste.git Chaste
@@ -31,9 +33,10 @@ At this point you should configure Chaste with [wiki:ChasteGuides/UserBuildGuide
 
 You will also need the source for the CellBasedComparison2017 project.  This can be done by checking out the version from the repository by using the command 
 {{{
-svn checkout --username anonymous https://chaste.cs.ox.ac.uk/svn/chaste/projects/CellBasedComparison2017 projects/CellBasedComparison2017
+svn checkout -r 27368 --username anonymous https://chaste.cs.ox.ac.uk/svn/chaste/projects/CellBasedComparison2017 projects/CellBasedComparison2017
 }}}
 in the Chaste directory. Note that '''username''' for checking out the project code is 'anonymous'.  When prompted for a password then please give an email address.
+---
 
 Now the project should be installed, and everything should compile and run correctly. 
 You can now run the tests or simulations, or create your own test suites.
